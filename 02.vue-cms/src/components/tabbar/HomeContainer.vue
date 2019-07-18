@@ -37,9 +37,10 @@
 </template>
 
 <script>
+  import { Toast } from 'mint-ui'
 	export default {
 		data() {
-			return {}
+		
 		},
 		created() {
 			this.getLunbotu()
@@ -47,7 +48,24 @@
 		methods: {
 			//获取轮播数据
 			getLunbotu() {
-
+	
+				this.$http.get('localhost').then(result =>{
+					console.log(result.body)
+					if(result.body.status === 0){
+						//success
+						this.lunbotuList = result.body.message;
+						Toast('loading success ....')
+					}else{
+						//error
+						Toast('loading error ....')
+						
+					}
+				})
+			
+			 //ES6高级语法
+			 .then(function(data){
+			 	console.log(data)
+			 })
 			}
 		}
 	}
