@@ -33,40 +33,24 @@
 					<div class="mui-media-body">联系我们</div>
 				</a></li>
 		</ul>
+		<pre> {{ content }}</pre>
 	</div>
 </template>
 
 <script>
-  import { Toast } from 'mint-ui'
+	import { Toast } from 'mint-ui'
 	export default {
-		data() {
-		
-		},
-		created() {
-			this.getLunbotu()
-		},
-		methods: {
-			//获取轮播数据
-			getLunbotu() {
-	
-				this.$http.get('localhost').then(result =>{
-					console.log(result.body)
-					if(result.body.status === 0){
-						//success
-						this.lunbotuList = result.body.message;
-						Toast('loading success ....')
-					}else{
-						//error
-						Toast('loading error ....')
-						
-					}
-				})
-			
-			 //ES6高级语法
-			 .then(function(data){
-			 	console.log(data)
-			 })
+		name:'HomeContainer',
+		data(){
+			return {
+				content:'hhhh'
 			}
+		},
+		mounted(){
+			this.axios.post('http://api.komavideo.com/news/list').then(body => {
+				this.content = body.data;
+				console.log(content)
+			})
 		}
 	}
 </script>
@@ -102,4 +86,5 @@
 	.mui-grid-view.mui-grid-9 .mui-table-view-cell{
 		border: none;
 	}
+	
 </style>

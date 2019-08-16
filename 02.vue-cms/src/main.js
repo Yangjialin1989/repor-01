@@ -28,6 +28,12 @@ Vue.component(SwipeItem.name,SwipeItem)
 //1.3 导入自己的router.js 路由模块
 import router from './router.js'
 
+/*2019-08-15 axios 注册组件，注册完各个组件可以使用
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+Vue.use(VueAxios,axios)*/
+
+
 //导入App根组件
 import app from './App.vue'
 
