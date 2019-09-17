@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Test</title>
+		<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			{{ message }},
+			{{ num > 5 ? "yes":"no"}}
+			<div v-text="num"></div>
+			<div v-html="num"></div>
+			<input type="text" v-model="num">
+			<input type="button" value="destoryed" onclick="destroy()">
+		</div>
+		
+		<script>
+			//1.let 声明
+		    let app = new Vue({
+				el:'#app', 
+				data:{
+					message:'hhhh',
+					num:'<h1>10</h1>'
+				},
+				beforeCreated(){
+					alert('VM befor created创建前')
+				},
+				created(){
+					alert('VM created 已经创建')
+				},
+				beforeMount(){
+					alert('VM beforeMounted挂载前')
+					//额外添加功能,需要在挂载前这个生命周期函数里写.
+				},
+				mounted(){
+					alert('VM mounted已经挂载')
+				},
+				beforeUpdate(){
+					alert('VM beforeUpdate 数据更新前')
+				},
+				updated(){
+					alert('VM updated数据更新')
+				},
+				beforeDestroy(){
+					alert('VM beforeDestory销毁前')
+				},
+				destroyed(){
+					alert('VM destory销毁')
+				}
+				
+			})
+			function destroy(){
+				app.$destroy();
+			}
+			
+			/*leftcycle 
+			import { initMixin } from './init'
+			import { stateMixin } from './state'
+			import { renderMixin } from './render'
+			import { eventsMixin } from './events'
+			import { lifecycleMixin } from './lifecycle'
+			import { warn } from '../util/index'
+			
+			function Vue (options) {
+			  if (process.env.NODE_ENV !== 'production' &&
+			    !(this instanceof Vue)
+			  ) {
+			    warn('Vue is a constructor and should be called with the `new` keyword')
+			  }
+			  this._init(options)
+			}
+			
+			initMixin(Vue)
+			stateMixin(Vue)
+			eventsMixin(Vue)
+			lifecycleMixin(Vue)
+			renderMixin(Vue)
+			
+			export default Vue
+			
+			*/
+		</script>
+		
+		
+	</body>
+</html>

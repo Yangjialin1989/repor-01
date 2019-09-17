@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+	<link href="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet">
+	<script src="https://cdn.bootcss.com/vue-resource/1.5.1/vue-resource.min.js"></script>
+</head>
+
+<body>
+	<!-- 
+	   请求api的方式    ---1.jsonp 
+	   
+	   1.引入vue-resource.min.js
+	   2.VM.data 注册数据 myData:[],word:''
+	   3.VM.methods 配置jsonp参数 
+	       params:{
+	       	wd:this.word
+	       },
+	       jsonp:'cb'
+	   4..then() 函数
+	      this.myData = res.data.s // s 是请求的接口 
+	   
+		
+	 
+	 -->
+    <div id="app">
+		<input type="text" v-model="word" @keyup="get()">
+		<ul v-for='item in myData'>
+			<il>{{ item }}</il>
+		</ul>
+		
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+			myData:[],
+			word:''
+        },
+		methods:{
+			get:function(){
+				this.$http.jsonp('https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',{
+					params:{
+						wd:this.word
+					},
+					jsonp:'cb'
+				}).then(function(res){
+					this.myData = res.data.s // s 是请求的接口 
+					console.log(this.Data)
+				})
+				
+			}
+		}
+    })
+</script>
+
+</html>

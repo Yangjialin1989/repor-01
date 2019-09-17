@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+	<link href="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet">
+	<script src="https://cdn.bootcss.com/vue-resource/1.5.1/vue-resource.min.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+	<!-- 
+	   请求api的方式    ---3.axios
+	   
+	   1.引入axios.min.js
+	   2.VM.data 注册数据 user:{},uid:''
+	   
+	   3..then() 函数
+	      this.user = res.data 
+	   
+		
+	 
+	 -->
+    <div id="app">
+		<button @click="getSearch">request movies</button>
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+			user:{},
+			data:''
+        },
+		methods:{
+			getSearch:function(data){
+				//   https://news-at.zhihu.com/api/4/news/latest
+				axios.get(`https://douban.uieee.com/v2/movie/in_theaters`)
+					.then(res=>{
+						console.log(res)
+						console.log(res.data)
+					})
+			}
+		}
+		
+    })
+</script>
+
+</html>
