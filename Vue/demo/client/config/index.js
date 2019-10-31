@@ -3,37 +3,22 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path')
-
+var proxyConfig = require('./proxyConfig')
 module.exports = {
   dev: {
-
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {
-      '/api': {
-          target: 'https://news-at.zhihu.com',
-          changeOrigin: true,
-          pathRewrite: {
-              '^/api': '/api/4'
-          }
-      },
-      '/apii': {
-          target: '127.0.0.1:8081',
-          changeOrigin: true,
-          pathRewrite: {
-
-          }
-      },
-      '/goods/**':{
-          target:'http://localhost:3000'
-          
-
-
-      }
-
-    },
-
+    proxyTable: proxyConfig.proxy,
+//     {
+//       '/goods/**':{
+//           target:'http://localhost:3000'
+//       },
+//       '/users/**':{
+//           target:'http://localhost:3000'
+//       }
+//
+//     },
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
@@ -41,7 +26,6 @@ module.exports = {
     errorOverlay: true,
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
-
     // Use Eslint Loader?
     // If true, your code will be linted during bundling and
     // linting errors and warnings will be shown in the console.

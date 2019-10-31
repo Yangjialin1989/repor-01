@@ -7,7 +7,18 @@ import VueResource from 'vue-resource'
 import '@/assets/css/app.css'
 import VueLazyLoad from 'vue-lazyload'
 
+import infiniteScroll from 'vue-infinite-scroll'
+
+
+
+
+
+
 //挂载到Vue
+Vue.use(infiniteScroll)
+
+
+
 Vue.use(VueLazyLoad,{
   loading:'/static/img/ok-2.png'
 })

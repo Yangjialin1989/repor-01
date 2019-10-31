@@ -19,6 +19,26 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//访问拦截 每次访问都走这个逻辑
+app.use(function(req,res,next){
+	if(req.cookies.userId){
+		next()
+	}else{
+		//indexOf('/goods/list') > -1 判断字符串里面时候包含/goods/list 
+		console.log(req.originalUrl)
+		if(req.originalUrl == '/users/login' || req.path == '/goods/list'){
+			next()
+		}else{
+			res.json({
+				status:'1',
+				msg:'当前用户未登录',
+				result:''
+			})
+		}
+	}
+})
+
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/goods',goodsRouter)
