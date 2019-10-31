@@ -536,6 +536,16 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
          4.安装mongoDB
 
          4.安装node运行环境
+         
+         export NVM_DIR="/root/.nvm"
+         [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+         
+        三、
+        克隆git 项目   
+        git clone https://github.com/Yangjialin1989/repor-01
+        生产环境运行项目
+        
+        
 
 
 
