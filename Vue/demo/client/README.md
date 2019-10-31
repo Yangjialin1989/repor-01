@@ -546,6 +546,12 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
         生产环境运行项目
         
         
+        
+        ERROR in static/js/vendor.49ba12cac04145a8a8f9.js from UglifyJs
+        Unexpected token punc «:», expected punc «,» [./node_modules/_debug@2.6.9@debug/src/browser.js:158,8][static/js/vendor.49ba12cac04145a8a8f9.js:7328,56]
+
+        
+        
 
 
 
