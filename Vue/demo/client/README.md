@@ -550,7 +550,10 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
         ERROR in static/js/vendor.49ba12cac04145a8a8f9.js from UglifyJs
         Unexpected token punc «:», expected punc «,» [./node_modules/_debug@2.6.9@debug/src/browser.js:158,8][static/js/vendor.49ba12cac04145a8a8f9.js:7328,56]
 
+        Module build failed: Error: Couldn't find preset "es2015" relative to directory "/root/vue/repor-01/Vue/demo/client"
+                                                  预先布置        相关的       目录  
         
+        TypeError: requestShortener.shorten is not a function
         
 
 
