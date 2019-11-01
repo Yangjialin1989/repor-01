@@ -536,25 +536,27 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
          4.安装mongoDB
 
          4.安装node运行环境
-         
+
          export NVM_DIR="/root/.nvm"
          [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-         
+
         三、
-        克隆git 项目   
+        克隆git 项目
         git clone https://github.com/Yangjialin1989/repor-01
         生产环境运行项目
-        
-        
-        
+
+
+
         ERROR in static/js/vendor.49ba12cac04145a8a8f9.js from UglifyJs
         Unexpected token punc «:», expected punc «,» [./node_modules/_debug@2.6.9@debug/src/browser.js:158,8][static/js/vendor.49ba12cac04145a8a8f9.js:7328,56]
-
+                   符号：
         Module build failed: Error: Couldn't find preset "es2015" relative to directory "/root/vue/repor-01/Vue/demo/client"
-                                                  预先布置        相关的       目录  
-        
+                                                  预先布置        相关的       目录
+
         TypeError: requestShortener.shorten is not a function
+   
         
+
 
 
 

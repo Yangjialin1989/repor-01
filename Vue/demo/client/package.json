@@ -14,11 +14,14 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "ajv-keywords": "^2.1.1",
     "babel-plugin-transform-remove-strict-mode": "0.0.2",
     "bable-loader": "0.0.1-security",
+    "element-ui": "^2.12.0",
     "vue": "^2.5.2",
     "vue-infinite-scroll": "^2.0.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "webpack": "^3.6.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -71,7 +74,7 @@
     "selenium-server": "^3.0.1",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
-    "uglifyjs-webpack-plugin": "^1.0.0-rc.0",
+    "uglifyjs-webpack-plugin": "^0.4.6",
     "url-loader": "^0.5.8",
     "vue-axios": "^2.1.5",
     "vue-jest": "^1.0.2",
@@ -80,7 +83,6 @@
     "vue-resource": "^1.5.1",
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.5.2",
-    "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.9.1",
     "webpack-merge": "^4.1.0"

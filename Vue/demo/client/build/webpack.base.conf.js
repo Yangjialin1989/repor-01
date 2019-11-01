@@ -48,8 +48,12 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        loader: 'babel-loader',
-        include: [resolve('es2015'),resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client'),resolve('/node_modules/element-ui/src'),resolve('/node_modules/element-ui/packages')]
+        loader: 'babel-loader',//,resolve('/node_modules/element-ui/src')
+        //修改
+        include: [resolve('src'), resolve('test'),,resolve('/node_modules/element-ui/src'), resolve('node_modules/webpack-dev-server/client'),resolve('/node_modules/element-ui/packages')]
+
+        //原始
+        //include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
