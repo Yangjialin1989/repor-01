@@ -49,7 +49,11 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('es2015'),resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client'),resolve('/node_modules/element-ui/src'),resolve('/node_modules/element-ui/packages')]
+        //后添加
+        options:{
+          presets:['es2015']
+        }
+        //include: [resolve('es2015'),resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client'),resolve('/node_modules/element-ui/src'),resolve('/node_modules/element-ui/packages')]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
